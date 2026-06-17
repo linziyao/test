@@ -24,7 +24,7 @@ export interface CheckRecord {
   source_system: SourceSystemType;
   compare_result: CompareResult;
   source: SourceOption;
-  
+
   // To show comparison details easily
   db_values?: string[]; // Values from Data page if compared
   out_values?: string[]; // Values from Out system if compared
@@ -57,4 +57,3 @@ export interface HistoryLog {
   beforeSnapshot?: Partial<DataRecord>;
   afterSnapshot?: Partial<DataRecord>;
 }
-
