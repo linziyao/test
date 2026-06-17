@@ -25,13 +25,15 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
-
-      - name: Remove package-lock.json
-        run: rm -f package-lock.json
+          node-version: '20' # 建议升级到 20 或 22，匹配当前的 LTS 稳定版
 
       - name: Install dependencies
-        run: npm install
+        # 使用 npm ci 代替 npm install，严格按照 lock 文件安装依赖，速度更快且防错
+        run: npm ci
+
+      - name: Rebuild Tailwind Oxide bindings
+        # 核心修复方案：强制 Linux 环境重新拉取/编译 Tailwind 的底层二进制文件
+        run: npm rebuild @tailwindcss/oxide
 
       - name: Build project
         run: npm run build
