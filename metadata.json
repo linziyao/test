@@ -1,0 +1,6 @@
+{
+  "name": "数据维护与比对中心",
+  "description": "提供维护时间区间有序数据（Data）及比对外部系统数据（Data Check）的管理中心。支持海量搜索、按月自动比对、一键调整更新、列自由拖拽等高性能数据看板功能。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
